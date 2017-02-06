@@ -25,7 +25,7 @@ namespace DoneChatServeR.Hubs
             return chatVm;
         }
 
-        public List<ChatMessageViewModel> MessageGetList(string name, string msg)
+        public List<ChatMessageViewModel> MessageGetList(MessageViewModel message)
         {
             List<ChatMessageViewModel> items = new List<ChatMessageViewModel>(new ChatMessageViewModel[] {
                 new ChatMessageViewModel(new UserViewModel("Test"), "one", 1),
