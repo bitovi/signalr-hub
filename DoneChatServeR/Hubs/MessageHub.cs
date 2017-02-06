@@ -15,11 +15,11 @@ namespace DoneChatServeR.Hubs
             _repository = repository;
         }
 
-        public ChatMessageViewModel MessageCreate(string name, string body)
+        public ChatMessageViewModel MessageCreate(MessageViewModel message)
         {
             Random rand = new Random();
             int messageId = rand.Next();
-            ChatMessageViewModel chatVm = new ChatMessageViewModel(new UserViewModel(name), body, messageId);
+            ChatMessageViewModel chatVm = new ChatMessageViewModel(new UserViewModel(message.name), message.body, messageId);
             Clients.All.messageCreated(chatVm);
 
             return chatVm;

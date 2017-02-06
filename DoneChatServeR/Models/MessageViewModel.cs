@@ -2,13 +2,13 @@
 {
     public class MessageViewModel
     {
-        public string Name { get; set; }
-        public string Body { get; set; }
+        public string name { get; set; }
+        public string body { get; set; }
 
         public MessageViewModel(string name, string body)
         {
-            Name = name;
-            Body = body;
+            this.name = name;
+            this.body = body;
         }
     }
 }
