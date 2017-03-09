@@ -84,6 +84,11 @@
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="StackExchange.Redis, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StackExchange.Redis.1.2.0\lib\net45\StackExchange.Redis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
     <Reference Include="System.Web.Cors, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Cors.5.0.0\lib\net45\System.Web.Cors.dll</HintPath>
       <Private>True</Private>
@@ -117,10 +122,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\Startup.cs" />
-    <Compile Include="Hubs\DoneChatHub.cs" />
     <Compile Include="Hubs\MessageHub.cs" />
     <Compile Include="Infrastructure\NinjectSignalRDependencyResolver.cs" />
-    <Compile Include="Models\ChatMessageViewModel.cs" />
     <Compile Include="Models\ChatRoomViewModel.cs" />
     <Compile Include="Models\ChatUser.cs" />
     <Compile Include="Models\MessageViewModel.cs" />

@@ -9,6 +9,10 @@ namespace DoneChatServeR
 {
     public partial class Startup
     {
+        /// <summary>
+        /// Configures the application.
+        /// </summary>
+        /// <param name="app">The application builder.</param>
         public void Configuration(IAppBuilder app)
         {
             var kernel = SetupNinject();
@@ -17,6 +21,10 @@ namespace DoneChatServeR
         }
 
 
+        /// <summary>
+        /// Sets Up the ninject IOC.
+        /// </summary>
+        /// <returns>StandardKernel</returns>
         private static KernelBase SetupNinject()
         {
             var kernel = new StandardKernel();
@@ -25,10 +33,14 @@ namespace DoneChatServeR
                 .To<InMemoryRepository>()
                 .InSingletonScope();
 
-
             return kernel;
         }
 
+        /// <summary>
+        /// Setups the SignalR.
+        /// </summary>
+        /// <param name="kernel">The kernel.</param>
+        /// <param name="app">The application.</param>
         public void SetupSignalR(IKernel kernel, IAppBuilder app)
         {
             var resolver = new NinjectSignalRDependencyResolver(kernel);
